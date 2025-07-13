@@ -1,0 +1,19 @@
+import math
+
+def circle_coordinates(center, radius, num_dots):
+    cx, cy = center
+    coords = []
+    for i in range(num_dots):
+        angle = 2 * math.pi * i / num_dots
+        x = cx + radius * math.cos(angle)
+        y = cy + radius * math.sin(angle)
+        coords.append((x, y))
+    return coords
+
+# Example usage:
+center = (0, 0)
+radius = 10
+num_dots = 8
+dots = circle_coordinates(center, radius, num_dots)
+for idx, (x, y) in enumerate(dots):
+    print(f"Dot {idx+1}: ({x:.2f}, {y:.2f})")
